@@ -56,14 +56,6 @@ public class RandomUtils {
                 , getRandomInt(11, 99), getRandomInt(11, 99));
     }
 
-    public static String getRandomGender_bad_practice() {
-        String[] genders = {"Male", "Female", "Other"};
-
-        int randomIndex = getRandomInt(0, 2);
-
-        return genders[randomIndex];
-    }
-
     public static String getRandomGender() {
         String[] genders = {"Male", "Female", "Other"};
 
