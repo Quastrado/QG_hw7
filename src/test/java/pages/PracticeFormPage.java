@@ -114,6 +114,7 @@ public class PracticeFormPage {
     }
 
     public PracticeFormPage selectState(String value) {
+        stateSelect.scrollIntoView(true);
         stateSelect.click();
         stateContainer.$(byText(value)).click();
 
