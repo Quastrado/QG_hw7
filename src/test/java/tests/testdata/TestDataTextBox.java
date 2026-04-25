@@ -1,13 +1,16 @@
 package tests.testdata;
 
+import com.github.javafaker.Faker;
+
 public class TestDataTextBox {
-    public static String
-        userName = "Full Name",
-        userEmail = "example@mail.com",
-        incorrectUserEmail = "F!",
-        address = "Pushkina, Kolotushkina",
-        expectedName = "Name:Full Name",
-        expectedEmail = "Email:example@mail.com",
-        expectedCurrentAddress = "Current Address :Pushkina, Kolotushkina",
-        expectedPermanentAddress = "Permananet Address :Pushkina, Kolotushkina";
+    Faker faker = new Faker();
+
+    public String userName = faker.name().fullName();
+    public String userEmail = faker.internet().emailAddress();
+    public String incorrectUserEmail = userEmail.replace("@", "");
+    public String address = faker.address().fullAddress();
+    public String expectedName = "Name:" + userName;
+    public String expectedEmail = "Email:" + userEmail;
+    public String expectedCurrentAddress = "Current Address :" + address;
+    public String expectedPermanentAddress = "Permananet Address :" + address;
 }
